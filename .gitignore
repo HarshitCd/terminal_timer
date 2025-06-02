@@ -1,2 +1,4 @@
 audio/
 target/
+
+.DS_Store
