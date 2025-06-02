@@ -16,6 +16,8 @@ import (
 	"github.com/faiface/beep/speaker"
 )
 
+var audioPath string
+
 type tickMsg time.Time
 
 func tickCmd() tea.Cmd {
@@ -98,7 +100,7 @@ func (m Model) View() string {
 }
 
 func playAudio() {
-	file, err := os.Open("audio/time_up.mp3")
+	file, err := os.Open(audioPath)
 	if err != nil {
 		log.Fatal(err)
 	}

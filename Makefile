@@ -1,6 +1,12 @@
+AUDIO_PATH?="audio/time_up.mp3"
+
 build:
 	@go mod tidy
-	@go build -o target/pomodoro
+	@go build -ldflags="-X 'main.audioPath=$(AUDIO_PATH)'" -o ./target/terminal_timer
+
+install:
+	@mkdir -p ~/.config/terminal_timer
+	@cp -R audio ~/.config/terminal_timer/
 
 run: build
 	@./target/pomodoro
