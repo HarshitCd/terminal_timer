@@ -1,4 +1,4 @@
-AUDIO_PATH?="audio/time_up.mp3"
+AUDIO_PATH?="$(HOME)/.config/terminal_timer/audio/time_up.mp3"
 
 build:
 	@go mod tidy
